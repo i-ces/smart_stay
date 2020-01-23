@@ -27,7 +27,7 @@ def costumer():
         else:
             print('Thanks for using our app.')
 def host():
-    
+    pass
 
 
 
