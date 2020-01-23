@@ -20,10 +20,12 @@ if option==2:
     name=input('First Name:')
     name1=input('Middle Name:')
     name2=input('Last Name:')
-
     address=input('Address:')
     phone_number=input('Phone Number')
     email=input('Email address:')
+    total_rooms=int(input('No of total rooms'))
+    booked_rooms = int(input('No of booked rooms'))
+    rooms_aviable=int(input('No. of rooms aviable'))
     services=input('Services with charges')
     file.writelines(password)
     file.writelines('\n')
@@ -36,6 +38,12 @@ if option==2:
     file.writelines(phone_number)
     file.writelines('\n')
     file.writelines(services)
+    file.writelines('\n')
+    file.writelines(str(total_rooms))
+    file.writelines('\n')
+    file.writelines(str(booked_rooms))
+    file.writelines('\n')
+    file.writelines(str(rooms_aviable))
     file.writelines('\n')
 
 
