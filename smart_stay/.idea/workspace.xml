@@ -128,7 +128,7 @@
       <updated>1579758675138</updated>
       <workItem from="1579758680004" duration="14566000" />
       <workItem from="1579784082980" duration="11401000" />
-      <workItem from="1579831086659" duration="10466000" />
+      <workItem from="1579831086659" duration="13756000" />
     </task>
     <servers />
   </component>
@@ -152,29 +152,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579839008963" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1579856197329">
+    <state x="303" y="22" key="CommitChangelistDialog2" timestamp="1579857129268">
+      <screen x="0" y="0" width="1440" height="844" />
+    </state>
+    <state x="303" y="22" key="CommitChangelistDialog2/0.0.1440.844@0.0.1440.844" timestamp="1579857129268" />
+    <state width="1440" height="245" key="GridCell.Tab.0.bottom" timestamp="1579859657256">
       <screen x="0" y="0" width="1440" height="844" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.839@0.0.1440.839" timestamp="1579812899111" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.844@0.0.1440.844" timestamp="1579856197329" />
+    <state width="1440" height="245" key="GridCell.Tab.0.bottom/0.0.1440.844@0.0.1440.844" timestamp="1579859657256" />
     <state width="699" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579847766210" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1579856197328">
+    <state width="1440" height="245" key="GridCell.Tab.0.center" timestamp="1579859657255">
       <screen x="0" y="0" width="1440" height="844" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.839@0.0.1440.839" timestamp="1579812899110" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.844@0.0.1440.844" timestamp="1579856197328" />
+    <state width="1440" height="245" key="GridCell.Tab.0.center/0.0.1440.844@0.0.1440.844" timestamp="1579859657255" />
     <state width="699" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579847766208" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1579856197328">
+    <state width="1440" height="245" key="GridCell.Tab.0.left" timestamp="1579859657254">
       <screen x="0" y="0" width="1440" height="844" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.839@0.0.1440.839" timestamp="1579812899109" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.844@0.0.1440.844" timestamp="1579856197328" />
+    <state width="1440" height="245" key="GridCell.Tab.0.left/0.0.1440.844@0.0.1440.844" timestamp="1579859657254" />
     <state width="699" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579847766208" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1579856197328">
+    <state width="1440" height="245" key="GridCell.Tab.0.right" timestamp="1579859657255">
       <screen x="0" y="0" width="1440" height="844" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.839@0.0.1440.839" timestamp="1579812899110" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.844@0.0.1440.844" timestamp="1579856197328" />
+    <state width="1440" height="245" key="GridCell.Tab.0.right/0.0.1440.844@0.0.1440.844" timestamp="1579859657255" />
     <state width="699" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579847766209" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1579778634386">
       <screen x="0" y="0" width="1440" height="900" />
@@ -192,6 +196,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579778634386" />
+    <state x="503" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579857110211">
+      <screen x="0" y="0" width="1440" height="844" />
+    </state>
+    <state x="503" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.844@0.0.1440.844" timestamp="1579857110211" />
     <state x="301" y="37" width="837" height="825" key="find.popup" timestamp="1579769409667">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -205,7 +213,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_stay$creating_account.coverage" NAME="creating_account Coverage Results" MODIFIED="1579776517568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/host" />
     <SUITE FILE_PATH="coverage/smart_stay$after_login.coverage" NAME="after_login Coverage Results" MODIFIED="1579777059376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/costumer" />
-    <SUITE FILE_PATH="coverage/smart_stay$main.coverage" NAME="main Coverage Results" MODIFIED="1579856197319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/smart_stay$main.coverage" NAME="main Coverage Results" MODIFIED="1579859657245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/smart_stay$creating_an_account.coverage" NAME="creating_an_account Coverage Results" MODIFIED="1579778190226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/costumer" />
   </component>
 </project>

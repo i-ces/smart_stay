@@ -1,6 +1,6 @@
 import os
 while input('Type Yes if you want to proceed.').lower()=='yes':
-    print('Welcome to Smart Stay'.center(150))
+    print('Welcome to Smart Stay'.center(200))
     print('''Choose an option:
     1.Host
     2.Customer''')
@@ -21,6 +21,7 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                         print(i+1 ,'.' + line,sep='')
                     print('Choose an option:\n1.Search with address\n2.Quit')
                     option = int(input())
+                    print('Home Stays Available in: \n1.Lwang\n2.Dhumpus')
                     if option == 1:
                         address = input('Where are you going?')
                         file1 = open(address, 'r')
@@ -110,41 +111,45 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
             file2.writelines(country)
             file2.writelines('\n')
             file2.writelines(contact)
-            address = input('Where are you going?')
-            file1 = open(address, 'r')
-            print('Home Stays:')
-            for i, line in enumerate(file1):
-                print(i + 1, '.' + line, sep='')
-            choice = input('Enter the homestay you wish to stay:')
-            file2 = open(choice, 'r')
-            details = file2.readlines()
-            print('Name:', choice)
-            print('Location:', details[3])
-            print('No. of rooms aviable:', details[6])
-            print('Services:', details[5])
-            print('Charge for a room:', details[7])
-            print('Contact no.:', details[4])
-            print('Do you want to book?')
-            choice1 = input('Yes or No:').lower()
-            if choice1 == 'yes':
-                num_of_rooms = input('Number of rooms:')
-                booking_id = open('booking_id_' + choice, 'w+')
-                booking_id.writelines(usr_name)
-                booking_id.writelines('\n')
-                booking_rooms = open('booking_rooms' + choice + usr_name, 'w+')
-                booking_rooms.writelines(num_of_rooms)
-                booking_rooms.writelines('\n')
-                booking_services = open('booking_services' + choice + usr_name, 'w+')
-                booking_services.writelines(input('Write services you want:'))
-                booking_services.writelines('\n')
-                booking_services.close()
-                booking_rooms.close()
-                booking_id.close()
-                file1.close()
-                file2.close()
-                print('You will be contacted shortly. Thanks You!')
-            else:
-                print('Thanks for using our app.')
+            print('Choose an option:\n1.Search with address\n2.Quit')
+            option = int(input())
+            print('Home Stays Available in: \n1.Lwang\n2.Dhumpus')
+            if option == 1:
+                address = input('Where are you going?')
+                file1 = open(address, 'r')
+                print('Home Stays:')
+                for i, line in enumerate(file1):
+                    print(i + 1, '.' + line, sep='')
+                choice = input('Enter the homestay you wish to stay:')
+                file2 = open(choice, 'r')
+                details = file2.readlines()
+                print('Name:', choice)
+                print('Location:', details[3])
+                print('No. of rooms aviable:', details[6])
+                print('Services:', details[5])
+                print('Charge for a room:', details[7])
+                print('Contact no.:', details[4])
+                print('Do you want to book?')
+                choice1 = input('Yes or No:').lower()
+                if choice1 == 'yes':
+                    num_of_rooms = input('Number of rooms:')
+                    booking_id = open('booking_id_' + choice, 'w+')
+                    booking_id.writelines(usr_name)
+                    booking_id.writelines('\n')
+                    booking_rooms = open('booking_rooms' + choice + usr_name, 'w+')
+                    booking_rooms.writelines(num_of_rooms)
+                    booking_rooms.writelines('\n')
+                    booking_services = open('booking_services' + choice + usr_name, 'w+')
+                    booking_services.writelines(input('Write services you want:'))
+                    booking_services.writelines('\n')
+                    booking_services.close()
+                    booking_rooms.close()
+                    booking_id.close()
+                    file1.close()
+                    file2.close()
+                    print('You will be contacted shortly. Thanks You!')
+                else:
+                    print('Thanks for using our app.')
 
 
     elif option == '1':
@@ -232,4 +237,5 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
             file3.close()
             print('You have been placed for verification. We will visit you shortly.')
 else:
+    print('Thank You')
     exit()
