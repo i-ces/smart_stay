@@ -11,15 +11,15 @@ if option == '2':
     if option == 1:
         try:
             usr_name = input("User Name:")
-            file1 = open(usr_name, 'r')
-            file1.seek(0)
+            file1 = open(usr_name+'_pwd', 'r')
             pwd = file1.readline()
-            if input('Password') == pwd[0:len(pwd) - 1]:
+            entr_pwd=input('Password')
+            if entr_pwd == pwd:
                 print('Home Stays:')
                 homestay = open('homestay', 'r')
                 for i, line in enumerate(homestay):
                     print(i ,'.' + line,sep='')
-                print('Choose an option:\n1.Search with address\n2.Select\n3.Quit')
+                print('Choose an option:\n1.Search with address\n2.Quit')
                 option = int(input())
                 if option == 1:
                     address = input('Where are you going?')
@@ -28,7 +28,7 @@ if option == '2':
                     for i, line in enumerate(file1):
                         print(i , '.' + line,sep='')
                     choice = input('Enter the homestay you wish to stay')
-                    file2 = open(choice[0,len(choice)-1], 'r')
+                    file2 = open(choice, 'r')
                     details = file2.readlines()
                     print('Name:', choice)
                     print('Location:', details[3])
@@ -40,19 +40,26 @@ if option == '2':
                     choice1 = input('Yes or No:').lower()
                     if choice1 == 'yes':
                         num_of_rooms = input('Number of rooms')
-                        booking = open('booking_' + choice1, 'w+')
-                        booking.writelines(usr_name)
-                        booking.writelines('\n')
-                        booking.writelines(num_of_rooms)
-                        booking.writelines('\n')
-                        booking.writelines(input('Write services you want:'))
-                        booking.writelines('\n')
+                        booking_id = open('booking_id_' + choice+usr_name, 'w+')
+                        booking_id.writelines(usr_name)
+                        booking_id.writelines('\n')
+                        booking_rooms = open('booking_rooms' + choice + usr_name, 'w+')
+                        booking_rooms.writelines(num_of_rooms)
+                        booking_rooms.writelines('\n')
+                        booking_services = open('booking_services' + choice +usr_name, 'w+')
+                        booking_services.writelines(input('Write services you want:'))
+                        booking_services.writelines('\n')
+                        booking_services.close()
+                        booking_rooms.close()
+                        booking_id.close()
+                        file1.close()
+                        file2.close()
                     else:
                         print('Thanks for using our app.')
             else:
-                print('Incorrect Password')
+                pass
         except:
-            print('User Name don\'t exit.')
+            print('User Name or password error.')
     if option == 2:
         user_name = input('User Name:')
         if os.path.exists(user_name) == True:
@@ -60,6 +67,7 @@ if option == '2':
             user_name = input()
         else:
             file = open(user_name, 'w+')
+            file3=open(user_name+'_pwd','w+')
         password = input('Password:')
         name = input('First Name:')
         name1 = input('Middle Name:')
@@ -71,7 +79,7 @@ if option == '2':
         file.seek(1)
         email1 = file.readline()
         if email1[0:len(email1) - 1] != email:
-            file.writelines(password)
+            file3.writelines(password)
             file.writelines('\n')
             file.writelines(email)
             file.writelines('\n')
@@ -83,6 +91,10 @@ if option == '2':
             file.writelines('\n')
             file.writelines(id)
             file.writelines('\n')
+        file3.close()
+        file.close()
+        file2.close()
+        file1.close()
 
     if option == 3:
         name = input('First Name')
@@ -141,23 +153,34 @@ elif option == '1':
         try:
             usr_name = input("User Name:")
             file1 = open(usr_name, 'r')
-            file1.seek(0)
             pwd = file1.readline()
+            homestay=input('Name of your home stay')
+            print(pwd)
             if input('Password') == pwd[0:len(pwd)]:
                 print('Booking')
-                booking = open('booking_' + usr_name, 'r')
+
                 for i, line in enumerate(booking):
                     print(i ,'.' + line,sep='')
                 print('Whose details you want to see?')
                 option = (input('Enter the user name'))
+                booking_rooms = open('booking_room' + homestay +option, 'r')
+                booking_id = open('booking_id' + homestay +option, 'r')
+                booking_services = open('booking_services' + homestay +option, 'r')
                 file4 = open(option, 'r+')
-                detail = booking.readlines()
+                rooms = booking_rooms.readlines()
+                id=booking_id.readline()
+                services=booking_services.readline()
                 details = file4.readlines()
                 print('Name:', details[2])
                 print('Address:', details[3])
-                print('No. of rooms booked:', detail[1])
-                print('Services:', details[2])
+                print('No. of rooms booked:', rooms)
+                print('Services:', services)
                 print('Contact no.', details[4])
+                booking_services.close()
+                booking_id.close()
+                booking_rooms.close()
+                file1.close()
+                file4.close()
             else:
                 print('Incorrect Password')
         except:
@@ -173,6 +196,7 @@ elif option == '1':
         file4.writelines(password)
         file4.writelines('\n')
         name = input('Home Stay name:')
+        file4.writelines(name)
         file=open(name,'w+')
         file3 = open('homestay', 'w+')
         file3.writelines(name)
@@ -200,3 +224,8 @@ elif option == '1':
         file.writelines('\n')
         file.writelines(charge)
         file.writelines('\n')
+        file4.close()
+        file.close()
+        file1.close()
+        file2.close()
+        file3.close()
