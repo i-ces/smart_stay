@@ -1,5 +1,4 @@
 import os
-from process import costumer
 
 print('Welcome to Smart Stay'.center(150))
 print('''Choose an option:
@@ -40,7 +39,7 @@ if option == '2':
                     print('Do you want to book?')
                     choice1 = input('Yes or No:').lower()
                     if choice1 == 'yes':
-                        num_of_rooms = int(input('Number of rooms'))
+                        num_of_rooms = input('Number of rooms')
                         booking = open('booking_' + choice1, 'w+')
                         booking.writelines(usr_name)
                         booking.writelines('\n')
@@ -122,7 +121,7 @@ if option == '2':
             print('Do you want to book?')
             choice1 = input('Yes or No:').lower()
             if choice1 == 'yes':
-                num_of_rooms = int(input('Number of rooms'))
+                num_of_rooms = input('Number of rooms')
                 booking = open('booking_' + choice1, 'w+')
                 booking.writelines(usr_name)
                 booking.writelines('\n')
@@ -144,7 +143,7 @@ elif option == '1':
             file1 = open(usr_name, 'r')
             file1.seek(0)
             pwd = file1.readline()
-            if input('Password') == pwd[0:len(pwd) - 1]:
+            if input('Password') == pwd[0:len(pwd)]:
                 print('Booking')
                 booking = open('booking_' + usr_name, 'r')
                 for i, line in enumerate(booking):
@@ -169,9 +168,12 @@ elif option == '1':
             print('User name already exist')
             user_name = input()
         else:
-            file = open(user_name, 'w+')
+            file4 = open(user_name, 'w+')
         password = input('Password:')
+        file4.writelines(password)
+        file4.writelines('\n')
         name = input('Home Stay name:')
+        file=open(name,'w+')
         file3 = open('homestay', 'w+')
         file3.writelines(name)
         address = input('Where are you located:')
