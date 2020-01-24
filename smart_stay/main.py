@@ -40,7 +40,7 @@ if option == '2':
                     choice1 = input('Yes or No:').lower()
                     if choice1 == 'yes':
                         num_of_rooms = input('Number of rooms')
-                        booking_id = open('booking_id_' + choice+usr_name, 'w+')
+                        booking_id = open('booking_id_' + choice, 'w+')
                         booking_id.writelines(usr_name)
                         booking_id.writelines('\n')
                         booking_rooms = open('booking_rooms' + choice + usr_name, 'w+')
@@ -93,8 +93,7 @@ if option == '2':
             file.writelines('\n')
         file3.close()
         file.close()
-        file2.close()
-        file1.close()
+
 
     if option == 3:
         name = input('First Name')
@@ -155,17 +154,18 @@ elif option == '1':
             file1 = open(usr_name, 'r')
             pwd = file1.readline()
             homestay=input('Name of your home stay')
-            print(pwd)
-            if input('Password') == pwd[0:len(pwd)]:
+            if input('Password') == pwd[0:len(pwd)-1]:
                 print('Booking')
+                booking_rooms = open('booking_room' + homestay, 'r')
 
-                for i, line in enumerate(booking):
+
+                for i, line in enumerate(booking_id):
                     print(i ,'.' + line,sep='')
                 print('Whose details you want to see?')
                 option = (input('Enter the user name'))
-                booking_rooms = open('booking_room' + homestay +option, 'r')
-                booking_id = open('booking_id' + homestay +option, 'r')
-                booking_services = open('booking_services' + homestay +option, 'r')
+                booking_id = open('booking_id' + homestay + option, 'r')
+                booking_services = open('booking_services' + homestay + option, 'r')
+
                 file4 = open(option, 'r+')
                 rooms = booking_rooms.readlines()
                 id=booking_id.readline()
@@ -224,8 +224,6 @@ elif option == '1':
         file.writelines('\n')
         file.writelines(charge)
         file.writelines('\n')
-        file4.close()
         file.close()
-        file1.close()
         file2.close()
         file3.close()
