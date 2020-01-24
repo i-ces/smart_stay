@@ -156,18 +156,19 @@ elif option == '1':
             homestay=input('Name of your home stay')
             if input('Password') == pwd[0:len(pwd)-1]:
                 print('Booking')
-                booking_rooms = open('booking_room' + homestay, 'r')
+                booking_id = open('booking_id_' + homestay, 'r')
+
 
 
                 for i, line in enumerate(booking_id):
                     print(i ,'.' + line,sep='')
                 print('Whose details you want to see?')
                 option = (input('Enter the user name'))
-                booking_id = open('booking_id' + homestay + option, 'r')
+                booking_rooms = open('booking_rooms' + homestay + option, 'r')
                 booking_services = open('booking_services' + homestay + option, 'r')
 
                 file4 = open(option, 'r+')
-                rooms = booking_rooms.readlines()
+                rooms = booking_rooms.readline()
                 id=booking_id.readline()
                 services=booking_services.readline()
                 details = file4.readlines()
