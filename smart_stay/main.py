@@ -236,6 +236,6 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
             file2.close()
             file3.close()
             print('You have been placed for verification. We will visit you shortly.')
-else:
-    print('Thank You')
+ else:
+    print('Greetings')
     exit()
