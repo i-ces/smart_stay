@@ -1,5 +1,6 @@
 import os
-while input('Type Yes if you want to proceed.').lower()=='yes':
+
+while input('Type Yes if you want to proceed.').lower() == 'yes':
     print('Welcome to Smart Stay'.center(200))
     print('''Choose an option:
     1.Host
@@ -11,14 +12,14 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
         if option == 1:
             try:
                 usr_name = input("User Name:")
-                file1 = open(usr_name+'_pwd', 'r')
+                file1 = open(usr_name + '_pwd', 'r')
                 pwd = file1.readline()
-                entr_pwd=input('Password:')
+                entr_pwd = input('Password:')
                 if entr_pwd == pwd:
                     print('Home Stays:')
                     homestay = open('homestay', 'r')
                     for i, line in enumerate(homestay):
-                        print(i+1 ,'.' + line,sep='')
+                        print(i + 1, '.' + line, sep='')
                     print('Choose an option:\n1.Search with address\n2.Quit')
                     option = int(input())
                     print('Home Stays Available in: \n1.Lwang\n2.Dhumpus')
@@ -27,7 +28,7 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                         file1 = open(address, 'r')
                         print('Home Stays:')
                         for i, line in enumerate(file1):
-                            print(i+1 , '.' + line,sep='')
+                            print(i + 1, '.' + line, sep='')
                         choice = input('Enter the homestay you wish to stay:')
                         file2 = open(choice, 'r')
                         details = file2.readlines()
@@ -47,7 +48,7 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                             booking_rooms = open('booking_rooms' + choice + usr_name, 'w+')
                             booking_rooms.writelines(num_of_rooms)
                             booking_rooms.writelines('\n')
-                            booking_services = open('booking_services' + choice +usr_name, 'w+')
+                            booking_services = open('booking_services' + choice + usr_name, 'w+')
                             booking_services.writelines(input('Write services you want:'))
                             booking_services.writelines('\n')
                             booking_services.close()
@@ -60,7 +61,7 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                             print('Thanks for using our app.')
                 else:
                     pass
-            except:
+            except FileNotFoundError:
                 print('User Name or password error.')
         if option == 2:
             user_name = input('User Name:')
@@ -69,14 +70,13 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                 user_name = input()
             else:
                 file = open(user_name, 'w+')
-                file3=open(user_name+'_pwd','w+')
+                file3 = open(user_name + '_pwd', 'w+')
             password = input('Password:')
             name = input('First Name:')
             name1 = input('Middle Name:')
             name2 = input('Last Name:')
             address = input('Address:')
             phone_number = input('Phone Number:')
-            id = input('Identification Number:')
             email = input('Email address:')
             file.seek(1)
             email1 = file.readline()
@@ -91,12 +91,9 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                 file.writelines('\n')
                 file.writelines(phone_number)
                 file.writelines('\n')
-                file.writelines(id)
-                file.writelines('\n')
             file3.close()
             file.close()
             print('You are Registered.Enjoy!!')
-
 
         if option == 3:
             name = input('First Name:')
@@ -160,30 +157,29 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
                 usr_name = input("User Name:")
                 file1 = open(usr_name, 'r')
                 pwd = file1.readline()
-                homestay=input('Name of your home stay')
-                if input('Password:') == pwd[0:len(pwd)-1]:
+                homestay = input('Name of your home stay')
+                if input('Password:') == pwd[0:len(pwd) - 1]:
                     print('Booking:')
                     booking_id = open('booking_id_' + homestay, 'r')
 
-
-
                     for i, line in enumerate(booking_id):
-                        print(i+1 ,'.' + line,sep='')
+                        print(i + 1, '.' + line, sep='')
                     print('Whose details you want to see?')
                     option = (input('Enter the user name:'))
-                    booking_rooms = open('booking_rooms:' + homestay + option, 'r')
+                    booking_rooms = open('booking_rooms' + homestay + option, 'r')
                     booking_services = open('booking_services' + homestay + option, 'r')
 
                     file4 = open(option, 'r+')
                     rooms = booking_rooms.readline()
-                    id=booking_id.readline()
-                    services=booking_services.readline()
+                    user_name = booking_id.readline()
+                    services = booking_services.readline()
                     details = file4.readlines()
                     print('Name:', details[2])
                     print('Address:', details[3])
                     print('No. of rooms booked:', rooms)
                     print('Services:', services)
                     print('Contact no.:', details[4])
+                    print('Make them feel comfortable')
                     booking_services.close()
                     booking_id.close()
                     booking_rooms.close()
@@ -205,7 +201,7 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
             file4.writelines('\n')
             name = input('Home Stay name:')
             file4.writelines(name)
-            file=open(name,'w+')
+            file = open(name, 'w+')
             file3 = open('homestay', 'w+')
             file3.writelines(name)
             address = input('Where are you located:')
@@ -236,6 +232,6 @@ while input('Type Yes if you want to proceed.').lower()=='yes':
             file2.close()
             file3.close()
             print('You have been placed for verification. We will visit you shortly.')
- else:
+else:
     print('Greetings')
     exit()
