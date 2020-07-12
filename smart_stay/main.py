@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 
 while input('Type Yes if you want to proceed.').lower() == 'yes':
